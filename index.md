@@ -14,6 +14,6 @@ Switch to the US Locale when systemm was installed with something else.
 ### Linux Hardware
 Slow speed with Intel N-6300 and Debian 8/9 (and probably many others)
 2. ```echo "options iwlwifi 11n_disable=1 swcrypto=1" | sudo tee -a /etc/modprobe.d/iwlwifi.conf```
-3. sudo modprobe -rv iwldvm
-4. sudo modprobe -v iwldvm
+3. ```sudo modprobe -rv iwldvm```
+4. ```sudo modprobe -v iwldvm```
 
