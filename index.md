@@ -13,7 +13,13 @@ Switch to the US Locale when systemm was installed with something else.
 
 ### Linux Hardware
 Slow speed with Intel N-6300 and Debian 8/9 (and probably many others)
-2. ```echo "options iwlwifi 11n_disable=1 swcrypto=1" | sudo tee -a /etc/modprobe.d/iwlwifi.conf```
-3. ```sudo modprobe -rv iwldvm```
-4. ```sudo modprobe -v iwldvm```
+1. ```echo "options iwlwifi 11n_disable=1 swcrypto=1" | sudo tee -a /etc/modprobe.d/iwlwifi.conf```
+2. ```sudo modprobe -rv iwldvm```
+3. ```sudo modprobe -v iwldvm```
 
+### Ansible
+Wrong version being used under user ENV but not under sudo. That was midly frustrating to say the least. For some reason, running ```ansible --version``` always showed 2.3.1.0 despite the fact that 2.4.1.0 was the only one installed.
+
+
+I think what ended up happening is that I previously installed Ansible either manually or through Python pip which for some reason confused Ansible.
+1. I removed everything under ```/usr/lib/python2.7/dist-packages/ansible/``` and ```/home/laurent/.local/lib/python2.7/site-packages/```
