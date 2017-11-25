@@ -14,10 +14,17 @@ Switch to the US Locale when systemm was installed with something else.
 Reset the admin password because sometimes passwords are hard.
 1. sudo foreman-rake permissions:reset
 
+### Galera and Mariadb
+1. Create a real admin user with all permissions to mimic root access.
+2. ```CREATE USER 'lanets'@'%' IDENTIFIED BY 'test'; ```
+3. ```GRANT ALL PRIVILEGES ON *.* TO 'lanets'@'%' WITH GRANT OPTION;```
+
 
 ### Linux Hardware
 Slow speed with Intel N-6300 and Debian 8/9 (and probably many others)
 2. ```echo "options iwlwifi 11n_disable=1 swcrypto=1" | sudo tee -a /etc/modprobe.d/iwlwifi.conf```
 3. ```sudo modprobe -rv iwldvm```
 4. ```sudo modprobe -v iwldvm```
+
+
 
