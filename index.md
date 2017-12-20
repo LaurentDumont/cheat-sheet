@@ -31,3 +31,8 @@ Wrong version being used under user ENV but not under sudo. That was midly frust
 
 I think what ended up happening is that I previously installed Ansible either manually or through Python pip which for some reason confused Ansible.
 1. I removed everything under ```/usr/lib/python2.7/dist-packages/ansible/``` and ```/home/laurent/.local/lib/python2.7/site-packages/```
+
+### Lenovo
+Find laptop serial number.
+1. Elevated CMD/PS prompt.
+2. ```wmic bios get serialnumber```
