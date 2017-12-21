@@ -36,3 +36,6 @@ I think what ended up happening is that I previously installed Ansible either ma
 Find laptop serial number.
 1. Elevated CMD/PS prompt.
 2. ```wmic bios get serialnumber```
+
+### iPerf
+```./iperf.exe -c 64.119.215.114 -u -b 200m -i 2 -t 100```
