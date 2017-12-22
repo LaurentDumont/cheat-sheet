@@ -39,3 +39,20 @@ Find laptop serial number.
 
 ### iPerf
 ```./iperf.exe -c 64.119.215.114 -u -b 200m -i 2 -t 100```
+
+### Tectonic / DNSMask
+
+```sudo docker run -d --rm --cap-add=NET_ADMIN --net=host quay.io/coreos/dnsmasq \
+  -d -q \
+  --dhcp-range=10.9.100.10,10.9.100.50 \
+  --enable-tftp --tftp-root=/var/lib/tftpboot \
+  --dhcp-userclass=set:ipxe,iPXE \
+  --dhcp-boot=tag:#ipxe,undionly.kpxe \
+  --dhcp-host=c0:ff:ee:00:00:15,10.9.100.3 \
+  --dhcp-host=c0:ff:ee:00:00:16,10.9.100.4 \
+  --dhcp-host=c0:ff:ee:00:00:17,10.9.100.5 \
+  --dhcp-option=3,10.9.100.1 \
+  --dhcp-boot=tag:ipxe,http://matchbox.event.lanets.ca:8080/boot.ipxe \
+  --address=/matchbox.example/192.168.1.2 \
+  --log-queries \
+  --log-dhcp```
